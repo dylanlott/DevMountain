@@ -1,0 +1,101 @@
+###Angular JS 
+
+###ANGULAR JS NOTES 
+jQuery Lite - Look at the documentation; for use with Angular Directives. They play nicely together. 
+
+###Reasons for Angular
+- Separation of logic / concerns & code organization 
+- Templating 
+- Data binding
+
+###Angular JS Fundamentals (video) 
+5 parts to JS 
+
+http://tinyurl.com/angularJSdemos - demos from the videos 
+
+SPA - Single page application. Data is requested and filled in on the page rather than refreshing the whole page. Speeds up user interaction and makes it smoother. 
+
+Load multiple views in the main page.
+
+### Getting Started ### 
+Directives -  a directive is a way to teach HTML new tricks. Angular allows us to extend HTML by adding attributes, elements
+
+example: <calendar></calendar> you can create your own elements in HTML 
+ng-model allows you to bind to a model.
+
+{{ data.binding }} example of data binding 
+
+ng-init - initialization data that you can bind to and display 
+ng-repeat="name in names" - loops through name in names (for loop)
+
+
+###Filters 
+Angular JS Uppercase Filter, Lowercase filter 
+{{cust.name | uppercase}} 
+{{cust.name | lowercase}}
+{{cust.name | 3 }} -- limit number of items shown from an array to 3 items total. 
+
+
+###Data Binding 
+
+
+
+
+### Views, Controllers, Scopes ### 
+Controller doesn't have to know about the view. 
+
+View >> $Scope << Controller 
+$Scope glues the controller and view together. 
+
+SimpleContoller($scope) {
+    $scope.customers 
+}
+
+Directives - extends HTML 
+Filters - filter data and display it in the view 
+View - the HTML document / Template 
+Controller - Logic layer (controls the view)
+$scope - This is just an object. 
+ 
+
+CDNS - Browser caching, sometimes faster loading
+
+ng-app - container for angular app. Change depending on what you want it to affect on your page. Only affects tags that it has scope with. 
+
+Purpose of creating a controller - store data, etc...
+
+after creating the Scope property .name 
+try to keep your scope clean and keep your scope as clean as possible. 
+
+(services will handle your AJAX requests and other things like that.)
+
+ng-model : show something to the scope property 
+
+ng-click"addItem()" - fires addItem() when an element is clicked 
+
+after addItem, make the inputy empty. $scope.newItem = ''; 
+
+if($scope.newItem === ''){
+	debugger; 
+	return;
+}
+
+debugger; -- used for debugging with dev tools 
+
+//remove item 
+var index = $scope.todoList.indexOf(); 
+if($scope.todoList.indexOf(str) !== -1){
+	$scope.todoList.splice(index, 1)
+}
+
+ng-model -- adds a property to an object 
+ng-repeat -- iterate through a list of something  
+ng-click -- trigger event when clicked (can be assigned to anything DOM)
+
+
+
+
+activity of the day - todo list 
+
+
+ 
