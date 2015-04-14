@@ -1,0 +1,43 @@
+###angular services and angular notes
+
+anything that doesn't have to do directly with your view, should be put in a service. 
+
+#building a service 
+
+var app = angular.module('superCool'); 
+
+app.service('mainService', function(){
+	console.log("service loaded"); 
+	
+	this.myProperty /*"this" is referencing the mainService object */
+
+	this.countTheOdds = function(str){
+		str = str.split('');
+		var odds = 0; 
+		for(var i = 0; i< str.length; i++){
+			if(Number(str[i]) % 2 === 1 ){
+				odds++; 
+			}
+		}
+		return odds; 
+	}
+})
+
+#injecting a service -- put it as a callback in the main app declaration 
+
+#best design practices -- services should be concerned with state  
+
+# state is the state of being such as "logged in" or "logged out" 
+
+#variables in services -- 
+
+#anything that calls myService has access to "this"
+
+$http - dollar signs are angular built-in parts, don't use them in your own names 
+
+#maker function = function that makes a new object, Factory is a maker function. Maker function returns the object. 
+
+# constructor function = Service uses "new" keyword to create 
+
+##your controller shouldn't have data in it. It should only handle data provided by services and factories. Controllers should HANDLE it, not create or store it. 
+
