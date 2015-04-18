@@ -1,0 +1,65 @@
+###ANGULAR JS NOTES / REVIEW  
+<html> -- view. 
+Controller is injected into the view with $scope. 
+$scope works very closely with view. They talk to each other. 
+$scope is just an object with methods / functions on it, too 
+If the $scope changes, the view might change based on what the view has, too. 
+
+angularjs.org/ -- developer introduction -- learn more about the front end 
+
+$scope already has methods on it from Angular that we dont' see / create 
+
+########(EXMAPLE)
+view --> $scope / controller ---> service ---> iTunes (sample HTTP request flow) 
+########
+
+View needs $scope to talk to the controller. That's why we inject $scope in the controller. 
+
+########(EXMAPLE)
+iTunes --> .then (promise from the HTTP in the service) --> $scope object / controller --> view / HTML 
+########
+
+So the HTTP promise looks like 
+########(EXMAPLE)
+HTTP Promise object --> iTunes --> .then (promise fulfilled) --> $scope (to be further controlled)
+########
+
+--Reuse Services as much as possible, do all your logic and heavy lifting in them.
+-- Controllers change with different routes, but services don't, which is why we try to reuse services as much as possible, 
+and controllers are reserved for more page-by-page / situational items.  
+
+
+######
+Controller ---> Gets $scope injected to talk to the $scope. Gets the Service injected so that it can talk to the service. 
+
+Controller has both $scope and services injected into it. Sort of the hub of all the angular-side data. Services are the heavyweights. 
+
+
+deferred has 3 main methods 
+
+promise
+reject 
+return 
+
+when you return a deffered.promise, it immediatley lets this promise come back fist 
+
+.then method on that promise 
+
+deferred.resolve() -- let's it konw that the .then function can run 
+.then goes inside the service / method that the promise is being called on 
+
+$q.defer(); is a library of methods that you can use 
+
+$q is an object 
+
+deferred is a method 
+that method returns an object 
+
+resolve: ...
+reject: ...
+promise: .... 
+
+
+
+dfd.promise is the lock, and .then is the key that unlocks it once it's ready to be used 
+

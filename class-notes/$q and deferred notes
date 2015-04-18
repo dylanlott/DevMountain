@@ -1,0 +1,21 @@
+###Angular Review Notes 
+
+###Promises and Callbacks 
+$q -- this is a promises library 
+
+JavaScript does not have a promise library built in. 
+Promises are a better version of callbacks; more sophisticated, and more powerful. 
+
+$q only uses callbacks. 
+Angular really relies on $q, you can't ues it without in honestly.
+
+###Factory -- makes a new instance of itself every time it's injected
+Services don't, it just injects the SAME instance whenever else it's called after the first time. 
+
+### .then ###
+.then fires after the promise is fulfilled. Then we resolve the promise.
+
+
+
+
+
