@@ -1,0 +1,50 @@
+// Rethink DB 
+
+// Subscribe to change notifications from the DB 
+// No polling needed
+
+//some simple queries 
+
+r.table("users") //select table Users 
+	.plus("last_name") //grab last names from the users table 
+	.distinct().count() //remove duplicates
+ 	
+//change feeds are subscriptions that update in real time 
+.get(ID).changes() //subscribes you to a change feed for real time 
+
+ //server in node example 
+
+ ar r = require('rethinkdb'); 
+
+ r.connect().then(function(conn) {
+	 return r.table("users")
+	 .insert({name: "Bob"}).run(conn)
+	 .finally(function() { conn.close();  }); 
+ }).then(function(output) {
+ 	console.log(output); 
+ }); 
+
+ //changefeeds 
+
+ r.connect().then(function(conn) {
+ 	return r.table("fellowship")
+ 	.change().run(conn); 
+ })
+ .then(function(cursor) {
+ 	cursor.each(function(err, item) {
+ 	console.log(item); 
+ 	}); 
+ }); 
+
+
+//SOCKET.IO 
+//realtime framework 
+//supports websockets 
+
+/*
+rethinkdb.com/docs/cookbook
+
+rethinkdb.com/docs/install 
+
+rethinkdb.com/ -- main site 
+*/

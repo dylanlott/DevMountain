@@ -1,0 +1,23 @@
+MongoDB Query Examples and notes 
+
+###Start Mongo
+> mongo //enter the mongo shell 
+
+
+###Create Database 
+>use test //creates test database 
+
+### Create Collection 
+> db.users.insert({name: 'dylan', age: 20, status: 'active' })
+
+###
+
+
+Every function in mongo has a callback associated with it. 
+(err, docs) error and docs callback 
+
+Err returns NULL if the call is successful 
+
+Every record in Mongo has an _id added to it upon creation. EVERYTHING. 
+
+
